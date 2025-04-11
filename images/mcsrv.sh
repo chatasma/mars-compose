@@ -5,7 +5,7 @@ cd server
 if [ ! -f "sportpaper.jar" ]; then
     wget -O sportpaper.jar https://github.com/PGMDev/PGM/releases/download/v0.15/SportPaper.jar
     mkdir plugins
-    wget -O PGM.jar.zip https://nightly.link/PGMDev/PGM/workflows/deploy/dev/PGM.jar.zip
+    wget -O PGM.jar.zip https://nightly.link/PGMDev/PGM/workflows/build/dev/PGM.jar.zip
     unzip PGM.jar.zip
     mv PGM.jar plugins/
     rm PGM.jar.zip

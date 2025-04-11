@@ -55,7 +55,7 @@ services:
     networks:
       - api
     ports:
-      - "7000"
+      - "7000:7000"
       - "8000:8000"
     environment:
       - MARS_API_TOKEN=${MARS_API_TOKEN:-sampleauthtoken}
@@ -64,6 +64,7 @@ services:
       - MARS_LEVEL_COLORS_PATH=./config/level_colors.yml
       - MARS_PUNTYPES_PATH=./config/puntypes.yml
       - MARS_JOIN_SOUNDS_PATH=./config/join_sounds.yml
+      - MARS_DEBUG=true
     volumes:
       - ./api:/workspace/api
       - ./config/api:/workspace/config

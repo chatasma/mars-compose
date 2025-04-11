@@ -1,16 +1,5 @@
 #!/usr/bin/env bash
-# container utils
-container_is_running () {
-    if [ ! "$(docker ps -a | grep $1)" ]; then
-        echo 0
-        return
-    fi
-    if [ "$( docker container inspect -f '{{.State.Running}}' $1 )" == "true" ]; then
-        echo 1
-    else
-        echo 0
-    fi
-}
+source ./scripts/common_utils.sh
 
 # send stop to the MC server
 mcsrv_container="mcsrv"

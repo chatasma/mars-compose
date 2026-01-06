@@ -13,7 +13,7 @@ if [ ! -d "server" ]; then
 fi
 
 # throw the compilation tasks in the bg
-docker-compose up api_compile mars_compile -d
+docker-compose up api_compile mars_compile -d --build
 docker exec mars_compile './compile_mars.sh' &
 plugin_compile_pid=$!
 # effectively, join both of them
@@ -35,4 +35,4 @@ if [ ! -d "api/target" ]; then
 fi
 
 # start the MC server, API, Redis, DB
-docker-compose up -d mcsrv
+docker-compose up -d mcsrv --build
